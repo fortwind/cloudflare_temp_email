@@ -2,8 +2,8 @@
 
 function replace_value() {
     declare -A replace_mapping
-    replace_mapping['database_name']=$DB_NAME
-    replace_mapping['database_id']=$DB_ID
+    replace_mapping['database_name']="\"$DB_NAME\""
+    replace_mapping['database_id']="\"$DB_ID\""
 
     ln=0
     while IFS= read -r line; do
