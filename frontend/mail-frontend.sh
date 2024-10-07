@@ -1,7 +1,7 @@
 # #!/bin/sh
 
 pnpm build:pages
-cp -rf ../pages/functions ./dist
+cp -rf ../pages/functions .
 
 # cat > wrangler.toml <<EOF
 # name = "temp-email-pages"
