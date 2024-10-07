@@ -26,12 +26,14 @@ ADMIN_PASSWORDS = ["${ADMIN_PASSWORDS}"]
 DOMAINS = ["${EMAIL_DOMAIN}"] # all domain names
 ADMIN_USER_ROLE = "${ADMIN_USER_ROLE}"
 USER_ROLES = [
-   { domains = ["${EMAIL_DOMAIN}"], role = "${ADMIN_USER_ROLE}", prefix = "" },
+    { domains = ["${EMAIL_DOMAIN}"], role = "${ADMIN_USER_ROLE}", prefix = "" },
 ]
 BLACK_LIST = ""
 ENABLE_USER_CREATE_EMAIL = true
 ENABLE_USER_DELETE_EMAIL = true
 ENABLE_AUTO_REPLY = false
+JWT_SECRET="${JWT_SECRET}"
+RESEND_TOKEN="${RESEND_TOKEN}"
 
 [[d1_databases]]
 binding = "DB"
@@ -40,9 +42,4 @@ database_id = "${DB_ID}"
 
 [observability]
 enabled = true
-EOF
-
-cat > .dev.vars <<EOF
-JWT_SECRET="${JWT_SECRET}"
-RESEND_TOKEN="${RESEND_TOKEN}"
 EOF
