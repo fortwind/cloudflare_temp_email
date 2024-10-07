@@ -10,7 +10,7 @@
 # DB_ID
 
 cat > wrangler.toml <<EOF
-name = "cloudflare_temp_email"
+name = "cloudflare-temp-email"
 main = "src/worker.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = [ "nodejs_compat" ]
