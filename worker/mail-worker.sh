@@ -37,4 +37,7 @@ ENABLE_AUTO_REPLY = false
 binding = "DB"
 database_name = "${DB_NAME}"
 database_id = "${DB_ID}"
+
+[observability]
+enabled = true
 EOF
