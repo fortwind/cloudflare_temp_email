@@ -3,9 +3,8 @@
 cd ../frontend
 pnpm install
 pnpm build:pages
-cd ../pages
-pnpm run deploy
 
+cd ../pages
 cat > wrangler.toml <<EOF
 name = "temp-email-pages"
 pages_build_output_dir = "../frontend/dist"
@@ -16,3 +15,5 @@ binding = "BACKEND"
 service = "cloudflare-email"
 environment = "production"
 EOF
+
+pnpm run deploy
