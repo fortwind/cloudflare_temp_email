@@ -1,6 +1,5 @@
 # #!/bin/sh
 
-# EMAIL_API_DOMAIN
 # EMAIL_DOMAIN
 # PASSWORDS
 # ADMIN_PASSWORDS
@@ -15,9 +14,6 @@ name = "cloudflare-temp-email"
 main = "src/worker.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = [ "nodejs_compat" ]
-routes = [
-    { pattern = "${EMAIL_API_DOMAIN}", custom_domain = true },
-]
 
 [vars]
 PREFIX = ""
