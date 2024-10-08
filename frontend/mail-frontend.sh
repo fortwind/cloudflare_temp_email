@@ -12,18 +12,20 @@ sed -i 's@export async function onRequest@async function onRequest1@' ./function
 cat >> ./functions/_middleware.js <<EOF
 
 export async function onRequest(context) {
-    const reqPath = new URL(context.request.url).pathname
+    const url = new URL(context.request.url)
+    const reqPath = url.pathname
     if (reqPath === '/${uid}' && context.request.method === 'GET') {
         return new Response('', {
             status: 301,
             headers: {
-                'Set-Cookie': 'uid=${uid}; Max-Age=2592000; Secure; HttpOnly'
+                'Set-Cookie': 'uid=${uid}; Max-Age=2592000; Secure; HttpOnly',
+                'Location': 'https://' + url.host
             }
         })
     }
 
     const cookie = context.request.headers.get('cookie')
-    if (!cookie || !cookie.includes('uid=${uid};')) {
+    if (!cookie || !cookie.includes('uid=${uid}')) {
         return new Response(null, { status: 204 })
     }
 
