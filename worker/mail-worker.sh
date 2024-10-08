@@ -19,6 +19,7 @@ function wrangler_toml() {
     main = "src/worker.ts"
     compatibility_date = "2024-09-23"
     compatibility_flags = [ "nodejs_compat" ]
+    workers_dev = false  # 禁用默认的workers.dev域名，只接收pages转发
 
     [vars]
     PREFIX = ""
