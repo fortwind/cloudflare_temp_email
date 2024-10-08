@@ -25,7 +25,7 @@ export async function onRequest(context) {
     }
 
     const cookie = context.request.headers.get('cookie')
-    if (!cookie || !cookie.includes('uid=')) {
+    if (!cookie || !cookie.includes('uid=${uid}')) {
         return new Response(null, { status: 204 })
     }
 
