@@ -66,7 +66,7 @@ app.use('/*', async (c, n) => {
     await n();
 })"
 
-    worker_file=./worker.ts
+    worker_file=./src/worker.ts
     idx=0
     while read -r line; do
         idx=$((idx+1))
